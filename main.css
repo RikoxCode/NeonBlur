@@ -1,0 +1,469 @@
+rn jellyfin theme · CSS
+/*
+╔══════════════════════════════════════════════════════════════════╗
+║  MODERNES JELLYFIN THEME                                         ║
+║  Ein klares, zeitgemäßes Design mit ausführlichen Kommentaren   ║
+╚══════════════════════════════════════════════════════════════════╝
+
+INSTALLATION:
+1. Öffne Jellyfin Dashboard > Allgemein
+2. Scrolle zu "Benutzerdefiniertes CSS"
+3. Kopiere diesen Code in das Feld
+4. Klicke "Speichern" - Änderungen werden sofort angewendet!
+
+ANPASSUNG:
+- Farben kannst du unter "FARBSCHEMA" ändern
+- Alle Werte sind klar beschriftet und einfach anzupassen
+*/
+
+
+/* ═══════════════════════════════════════════════════════════════
+   FARBSCHEMA - Hier kannst du die Farben des Themes anpassen
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+    /* Hauptfarben */
+    --primary-color: #00a4dc;           /* Akzentfarbe (Blau) */
+    --primary-hover: #0099cc;           /* Hover-Zustand der Akzentfarbe */
+    --secondary-color: #1a1a1a;         /* Dunkler Hintergrund */
+    --background-dark: #0d0d0d;         /* Noch dunklerer Hintergrund */
+    
+    /* Textfarben */
+    --text-primary: #ffffff;            /* Haupttext (Weiß) */
+    --text-secondary: #b3b3b3;          /* Sekundärtext (Grau) */
+    --text-muted: #808080;              /* Gedämpfter Text */
+    
+    /* UI-Elemente */
+    --card-background: rgba(26, 26, 26, 0.8);  /* Karten-Hintergrund */
+    --border-color: #333333;            /* Rahmenfarbe */
+    --success-color: #4caf50;           /* Grün für Erfolg */
+    --warning-color: #ff9800;           /* Orange für Warnungen */
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   ALLGEMEINER HINTERGRUND & LAYOUT
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Haupthintergrund - Dunkler Farbverlauf */
+.backgroundContainer,
+.backgroundContainer.withBackdrop,
+html {
+    background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+    background-attachment: fixed;
+}
+
+/* Backdrop für bessere Lesbarkeit */
+.backdropContainer {
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(20px);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   KOPFZEILE (HEADER) - Moderne transparente Optik
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Transparenter Header mit leichtem Blur-Effekt */
+.skinHeader,
+.skinHeader-withBackground,
+.skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred {
+    background: rgba(13, 13, 13, 0.85) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Header ohne Home-Button */
+.skinHeader-blurred.noHomeButtonHeader {
+    background: rgba(13, 13, 13, 0.85) !important;
+}
+
+/* Vergrößerte Tab-Buttons für bessere Bedienbarkeit */
+.headerTabs.sectionTabs {
+    text-size-adjust: 115%;
+    font-size: 115%;
+}
+
+.emby-tab-button {
+    padding: 1.9em 1.9em;
+    transition: all 0.3s ease;
+}
+
+/* Aktiver Tab - Akzentfarbe */
+.emby-tab-button.emby-tab-button-active {
+    color: var(--primary-color) !important;
+}
+
+/* Hover-Effekt für Tabs */
+.emby-tab-button:hover {
+    color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Seitentitel Position anpassen */
+.pageTitle {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SEITENLEISTE (SIDEBAR)
+   ═══════════════════════════════════════════════════════════════ */
+
+.mainDrawer {
+    background: var(--secondary-color);
+    border-right: 1px solid var(--border-color);
+}
+
+/* Ausgewählter Menüpunkt */
+.navMenuOption-selected {
+    background: var(--primary-color) !important;
+    border-radius: 8px;
+    margin: 4px 8px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   KARTEN (CARDS) - Medien-Thumbnails
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Abgerundete Ecken für alle Karten */
+.cardContent-button,
+.itemDetailImage,
+.cardOverlayButton,
+.cardImageContainer {
+    border-radius: 12px !important;
+}
+
+/* Karten-Hintergrund */
+.cardBox {
+    background: var(--card-background);
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover-Effekt: Karte hebt sich */
+.card:hover .cardBox {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 164, 220, 0.3);
+}
+
+/* Card-Overlay (Info-Einblendung) */
+.cardOverlayContainer {
+    border-radius: 12px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   ABSPIELANZEIGEN (PLAYED INDICATORS)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Gesehen-Indikator: Modernes Grün */
+.playedIndicator {
+    background: var(--success-color) !important;
+    border-radius: 50%;
+}
+
+/* Anzahl-Indikator (z.B. Serien) */
+.countIndicator {
+    background: var(--primary-color);
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   FORMULAR-ELEMENTE - Inputs, Selects, Buttons
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Input-Felder, Textareas, Dropdown-Menüs */
+.emby-input,
+.emby-textarea,
+.emby-select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Fokussiertes Input-Feld */
+.emby-input:focus,
+.emby-textarea:focus,
+.emby-select:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(0, 164, 220, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Buttons */
+.button-submit,
+.raised.emby-button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.button-submit:hover,
+.raised.emby-button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 164, 220, 0.4);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   EPISODEN-VORSCHAU - Kompaktere Darstellung
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Episoden-Thumbnail: Kompakte Höhe */
+.listItemImage.listItemImage-large.itemAction.lazy {
+    height: 110px;
+    border-radius: 8px;
+}
+
+/* Episoden-Container */
+.listItem-content {
+    height: 115px;
+}
+
+/* Episoden-Beschreibung: Begrenzte Höhe */
+.secondary.listItem-overview.listItemBodyText {
+    height: 65px;
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   BESETZUNG (CAST & CREW) - Stilisierte Ansicht
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Kleinere, kreisförmige Schauspieler-Karten */
+#castContent .card.overflowPortraitCard {
+    width: 120px !important;
+    font-size: 90% !important;
+}
+
+/* Kreisförmige Bilder für Schauspieler */
+#castContent .cardScalable {
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 50%;
+}
+
+#castContent .cardContent-button {
+    border-radius: 50% !important;
+    background-size: cover !important;
+}
+
+#castContent .cardOverlayContainer {
+    border-radius: 50%;
+}
+
+/* Zentrierte Overlay-Buttons */
+#castContent .cardOverlayButton-br {
+    bottom: 5%;
+    right: 15%;
+    width: 70%;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   LOGIN-SEITE - Minimalistisches Design
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Schmaleres Login-Formular */
+#loginPage .readOnlyContent,
+#loginPage form {
+    max-width: 420px;
+    background: var(--card-background);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Login-Hintergrund mit Farbverlauf */
+#loginPage {
+    background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 50%, #2d2d2d 100%);
+    background-size: cover;
+}
+
+/* "Bitte anmelden" Text ausblenden */
+#loginPage h1 {
+    display: none;
+}
+
+/* Abstand nach oben für bessere Zentrierung */
+#loginPage .padded-left.padded-right.padded-bottom-page {
+    margin-top: 100px;
+}
+
+/* Manuelle/Passwort vergessen Buttons ausblenden (optional) */
+#loginPage .btnManual,
+#loginPage .btnForgotPassword {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+#loginPage .btnManual:hover,
+#loginPage .btnForgotPassword:hover {
+    opacity: 1;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   STERNEBEWERTUNGEN - Ausgeblendet für saubereres Design
+   ═══════════════════════════════════════════════════════════════ */
+
+div.starRatingContainer {
+    display: none;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   PAPER LISTS - Menüs und Listen
+   ═══════════════════════════════════════════════════════════════ */
+
+.paperList {
+    background: var(--card-background);
+    border-radius: 12px;
+}
+
+.listItem {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.listItem:hover {
+    background: rgba(0, 164, 220, 0.1);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   DIALOGE & POPUPS
+   ═══════════════════════════════════════════════════════════════ */
+
+.dialog {
+    background: var(--secondary-color);
+    border-radius: 16px;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.7);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SCROLLBARS - Moderne, schlanke Scrollbalken
+   ═══════════════════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE ANPASSUNGEN - Optimiert für verschiedene Bildschirme
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Tablets und kleinere Bildschirme */
+@media (max-width: 1280px) {
+    .emby-tab-button {
+        padding: 1.5em 1.5em;
+    }
+    
+    #castContent .card.overflowPortraitCard {
+        width: 100px !important;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 768px) {
+    .skinHeader {
+        backdrop-filter: blur(5px);
+    }
+    
+    .emby-tab-button {
+        padding: 1.2em 1.2em;
+        font-size: 100%;
+    }
+    
+    .cardBox:hover {
+        transform: none;
+    }
+    
+    #loginPage .readOnlyContent,
+    #loginPage form {
+        max-width: 90%;
+        padding: 30px 20px;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   ANIMATIONEN - Sanfte Übergänge
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Fade-In Animation für Seiten */
+.mainAnimatedPage {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Smooth Transitions für alle interaktiven Elemente */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   EXTRAS - Zusätzliche Verbesserungen
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Bessere Lesbarkeit für Links */
+a {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+/* Schatten für schwebende Elemente */
+.raised {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Fokus-Outline für bessere Accessibility */
+*:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
