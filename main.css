@@ -1,4 +1,3 @@
-rn jellyfin theme · CSS
 /*
 ╔══════════════════════════════════════════════════════════════════╗
 ║  MODERNES JELLYFIN THEME                                         ║
@@ -152,6 +151,33 @@ html {
 /* Card-Overlay (Info-Einblendung) */
 .cardOverlayContainer {
     border-radius: 12px;
+}
+
+/* Karten-Text ohne störenden Hintergrund */
+.cardText {
+    background: none !important;
+    background-color: transparent !important;
+}
+
+/* Text-Container am unteren Kartenrand */
+.cardTextCentered,
+.cardText-secondary {
+    background: none !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Alle Card-Footer-Elemente transparent */
+.cardFooterText,
+.cardFooter {
+    background: none !important;
+    background-color: transparent !important;
+}
+
+/* Inner Card Text Container */
+.innerCardFooter,
+.cardImageTextContainer {
+    background: none !important;
+    background-color: transparent !important;
 }
 
 
@@ -467,3 +493,15 @@ a:hover {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
+
+
+/*
+╔══════════════════════════════════════════════════════════════════╗
+║  ENDE DES THEMES                                                 ║
+║                                                                  ║
+║  Viel Spaß mit deinem neuen modernen Jellyfin-Theme!           ║
+║                                                                  ║
+║  TIPP: Du kannst die Farben oben im Abschnitt "FARBSCHEMA"     ║
+║  nach deinen Wünschen anpassen!                                 ║
+╚══════════════════════════════════════════════════════════════════╝
+*/
