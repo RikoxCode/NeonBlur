@@ -4,10 +4,10 @@
   "description": "Modern Jellyfin Theme with SCSS",
   "main": "main.scss",
   "scripts": {
-    "build": "sass main.scss:../output/neonblur-theme.css",
-    "build:min": "sass --style compressed main.scss:../output/neonblur-theme.min.css",
-    "watch": "sass --watch main.scss:../output/neonblur-theme.css",
-    "dev": "sass --watch --style expanded main.scss:../output/neonblur-theme.css"
+    "build": "sass main.scss:dist/neonblur-theme.css",
+    "build:min": "sass --style compressed main.scss:dist/neonblur-theme.min.css",
+    "watch": "sass --watch main.scss:dist/neonblur-theme.css",
+    "dev": "sass --watch --style expanded main.scss:dist/neonblur-theme.css"
   },
   "keywords": [
     "jellyfin",

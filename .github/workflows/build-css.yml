@@ -28,9 +28,6 @@ jobs:
     - name: Install dependencies
       run: npm ci --legacy-peer-deps || npm install
     
-    - name: Create output directory
-      run: mkdir -p ../output
-    
     - name: Build CSS (expanded)
       run: npm run build
     
@@ -42,8 +39,8 @@ jobs:
       with:
         name: jellyfin-theme-css
         path: |
-          ../output/*.css
-          ../output/*.css.map
+          dist/*.css
+          dist/*.css.map
         retention-days: 30
     
     - name: Upload build artifacts
@@ -52,5 +49,5 @@ jobs:
       with:
         name: neonblur-theme-css
         path: |
-          ../output/*.css
+          dist/*.css
         retention-days: 90
