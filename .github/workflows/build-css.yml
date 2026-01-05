@@ -43,11 +43,37 @@ jobs:
           dist/*.css.map
         retention-days: 30
     
-    - name: Upload build artifacts
+    - name: Create Release
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      uses: actions/upload-artifact@v4
+      uses: softprops/action-gh-release@v1
       with:
-        name: neonblur-theme-css
-        path: |
-          dist/*.css
-        retention-days: 90
+        tag_name: v${{ github.run_number }}
+        name: Release v${{ github.run_number }}
+        body: |
+          🎨 Automated CSS Build
+          
+          **Built from:** ${{ github.sha }}
+          **Build Number:** #${{ github.run_number }}
+          
+          ## 📦 Files:
+          - `neonblur-theme.css` - Expanded version
+          - `neonblur-theme.min.css` - Minified version
+          
+          ## 🚀 jsDelivr CDN Links:
+          ```
+          https://cdn.jsdelivr.net/gh/${{ github.repository }}@v${{ github.run_number }}/dist/neonblur-theme.css
+          https://cdn.jsdelivr.net/gh/${{ github.repository }}@v${{ github.run_number }}/dist/neonblur-theme.min.css
+          ```
+          
+          ## 📋 Latest Version (always up-to-date):
+          ```
+          https://cdn.jsdelivr.net/gh/${{ github.repository }}@main/dist/neonblur-theme.css
+          https://cdn.jsdelivr.net/gh/${{ github.repository }}@main/dist/neonblur-theme.min.css
+          ```
+        files: |
+          dist/neonblur-theme.css
+          dist/neonblur-theme.min.css
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

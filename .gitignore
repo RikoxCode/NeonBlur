@@ -1,7 +1,8 @@
 # CSS Build Artifacts
-*.css
 *.css.map
-dist/
+
+# Build directory (not ignored for GitHub releases)
+# dist/
 
 # Node modules
 node_modules/
