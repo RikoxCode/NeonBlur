@@ -1,0 +1,56 @@
+name: Build CSS Theme
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [20.x]
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci --legacy-peer-deps || npm install
+    
+    - name: Create output directory
+      run: mkdir -p ../output
+    
+    - name: Build CSS (expanded)
+      run: npm run build
+    
+    - name: Build CSS (minified)
+      run: npm run build:min
+    
+    - name: Upload CSS artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: jellyfin-theme-css
+        path: |
+          ../output/*.css
+          ../output/*.css.map
+        retention-days: 30
+    
+    - name: Upload build artifacts
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      uses: actions/upload-artifact@v4
+      with:
+        name: neonblur-theme-css
+        path: |
+          ../output/*.css
+        retention-days: 90
