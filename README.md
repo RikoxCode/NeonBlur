@@ -1,146 +1,147 @@
 # 🌊 AquaFlow - Jellyfin Theme (SCSS)
 
-Ein modernes, professionelles Jellyfin-Theme mit SCSS-Architektur.
+A modern, professional Jellyfin theme with SCSS architecture.
 
-## 📁 Dateistruktur
+## 📁 File Structure
 
 ```
 jellyfin-theme-scss/
-├── main.scss                 # Haupt-SCSS-Datei (importiert alles)
-├── package.json             # NPM Konfiguration
+├── main.scss                 # Main SCSS file (imports everything)
+├── package.json             # NPM configuration
 │
-├── utils/                   # Hilfsfunktionen
-│   ├── _variables.scss      # Farben, Abstände, Breakpoints
-│   └── _mixins.scss         # Wiederverwendbare SCSS-Mixins
+├── utils/                   # Utility functions
+│   ├── _variables.scss      # Colors, spacing, breakpoints
+│   └── _mixins.scss         # Reusable SCSS mixins
 │
-├── base/                    # Grundlegende Styles
-│   ├── _reset.scss          # Reset & Root-Styles
-│   ├── _background.scss     # Hintergrund-Styles
-│   └── _animations.scss     # Animationen
+├── base/                    # Base styles
+│   ├── _reset.scss          # Reset & root styles
+│   ├── _background.scss     # Background styles
+│   └── _animations.scss     # Animations
 │
-├── components/              # UI-Komponenten
-│   ├── _header.scss         # Kopfzeile
-│   ├── _sidebar.scss        # Seitenleiste
-│   ├── _cards.scss          # Medien-Karten
-│   ├── _forms.scss          # Formulare & Inputs
-│   ├── _episodes.scss       # Episoden-Ansicht
-│   ├── _cast.scss           # Besetzung
-│   └── _dialogs.scss        # Dialoge & Popups
+├── components/              # UI components
+│   ├── _header.scss         # Header
+│   ├── _sidebar.scss        # Sidebar
+│   ├── _cards.scss          # Media cards
+│   ├── _forms.scss          # Forms & inputs
+│   ├── _episodes.scss       # Episode view
+│   ├── _cast.scss           # Cast
+│   └── _dialogs.scss        # Dialogs & popups
 │
-└── layout/                  # Seitenlayouts
-    └── _login.scss          # Login-Seite
+└── layout/                  # Page layouts
+    └── _login.scss          # Login page
 ```
 
-## 🚀 Installation & Kompilierung
+## 🚀 Installation & Compilation
 
-### 1. Node.js & NPM installieren
-Falls noch nicht vorhanden: https://nodejs.org/
+### 1. Install Node.js & NPM
+If not already installed: https://nodejs.org/
 
-### 2. SCSS Compiler installieren
+### 2. Install SCSS Compiler
 ```bash
 npm install -g sass
 ```
 
-### 3. Theme kompilieren
+### 3. Compile Theme
 
-**Einmalig kompilieren:**
+**Compile once:**
 ```bash
 cd jellyfin-theme-scss
 sass main.scss:output.css
 ```
 
-**Watch Mode (automatische Kompilierung bei Änderungen):**
+**Watch mode (automatic compilation on changes):**
 ```bash
 sass --watch main.scss:output.css
 ```
 
-**Komprimierte Version:**
+**Compressed version:**
 ```bash
 sass --style compressed main.scss:output.min.css
 ```
 
-**Mit NPM Scripts:**
+**Using NPM scripts:**
 ```bash
-npm run build       # Normale Kompilierung
-npm run build:min   # Komprimierte Version
-npm run watch       # Watch Mode
-npm run dev         # Development Mode
+npm run build       # Normal compilation
+npm run build:min   # Compressed version
+npm run watch       # Watch mode
+npm run dev         # Development mode
 ```
 
-## 📋 Theme in Jellyfin verwenden
+## 📋 Using the Theme in Jellyfin
 
-1. Kompiliere das SCSS zu CSS (siehe oben)
-2. Öffne die generierte `output.css` Datei
-3. Kopiere den gesamten Inhalt
-4. Gehe zu **Jellyfin Dashboard** > **Allgemein**
-5. Scrolle zu **Benutzerdefiniertes CSS**
-6. Füge den CSS-Code ein
-7. Klicke **Speichern**
+1. Compile the SCSS to CSS (see above)
+2. Open the generated `output.css` file
+3. Copy the entire content
+4. Go to **Jellyfin Dashboard** > **General**
+5. Scroll to **Custom CSS**
+6. Paste the CSS code
+7. Click **Save**
 
-## 🎨 Anpassungen
+## 🎨 Customization
 
-### Farben ändern
-Öffne `utils/_variables.scss` und passe die Farben an:
+### Change Colors
+Open `utils/_variables.scss` and adjust the colors:
 
 ```scss
-$primary-color: #00a4dc;     // Deine Akzentfarbe
-$secondary-color: #1a1a1a;   // Dunkler Hintergrund
-// ... weitere Farben
+$primary-color: #00a4dc;     // Your accent color
+$secondary-color: #1a1a1a;   // Dark background
+// ... more colors
 ```
 
-### Abstände anpassen
+### Adjust Spacing
 ```scss
 $spacing-sm: 8px;
 $spacing-md: 12px;
 $spacing-lg: 24px;
 ```
 
-### Eigene Komponente hinzufügen
-1. Erstelle neue Datei in `components/` (z.B. `_mycomponent.scss`)
-2. Importiere sie in `main.scss`:
+### Add Custom Component
+1. Create new file in `components/` (e.g., `_mycomponent.scss`)
+2. Import it in `main.scss`:
    ```scss
    @import 'components/mycomponent';
    ```
-3. Kompiliere neu
+3. Recompile
 
-## 🛠️ Verwendete SCSS-Features
+## 🛠️ SCSS Features Used
 
-- **Variablen**: Zentrale Farbverwaltung
-- **Nesting**: Übersichtlichere Struktur
-- **Mixins**: Wiederverwendbare Styles
-- **Partials**: Modulare Dateiorganisation
-- **Imports**: Klare Abhängigkeiten
+- **Variables**: Centralized color management
+- **Nesting**: Clearer structure
+- **Mixins**: Reusable styles
+- **Partials**: Modular file organization
+- **Imports**: Clear dependencies
 
-## 💡 Tipps
+## 💡 Tips
 
-- Ändere nur Dateien in `utils/`, `components/`, `layout/` oder `base/`
-- Kompiliere nach jeder Änderung neu
-- Nutze Watch Mode während der Entwicklung
-- Versioniere deine Änderungen mit Git
+- Only modify files in `utils/`, `components/`, `layout/`, or `base/`
+- Recompile after each change
+- Use watch mode during development
+- Version control your changes with Git
 
-## 📝 Vorteile gegenüber reinem CSS
+## 📝 Advantages Over Plain CSS
 
-✅ Variablen für einfache Theme-Anpassung
-✅ Mixins für wiederverwendbare Styles
-✅ Nesting für bessere Lesbarkeit
-✅ Modulare Struktur für große Projekte
-✅ Leichte Wartbarkeit
+✅ Variables for easy theme customization
+✅ Mixins for reusable styles
+✅ Nesting for better readability
+✅ Modular structure for large projects
+✅ Easy maintainability
 
 ## 🐛 Troubleshooting
 
-**Problem**: SCSS kompiliert nicht
-- Lösung: Prüfe ob Sass installiert ist: `sass --version`
+**Problem**: SCSS won't compile
+- Solution: Check if Sass is installed: `sass --version`
 
-**Problem**: Änderungen werden nicht angezeigt
-- Lösung: Leere den Browser-Cache (Strg + Shift + R)
+**Problem**: Changes don't appear
+- Solution: Clear browser cache (Ctrl + Shift + R)
 
-**Problem**: CSS funktioniert nicht in Jellyfin
-- Lösung: Stelle sicher, dass du die kompilierte `.css` Datei verwendest, nicht die `.scss`
+**Problem**: CSS doesn't work in Jellyfin
+- Solution: Make sure you're using the compiled `.css` file, not the `.scss` file
 
-## 📄 Lizenz
+## 📄 License
 
-MIT License - Frei verwendbar für private und kommerzielle Projekte
+MIT License - Free to use for private and commercial projects
 
 ---
 
-**Viel Spaß mit deinem modernen Jellyfin-Theme! 🎉**
+**Enjoy your modern Jellyfin theme! 🎉**
+

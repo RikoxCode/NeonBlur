@@ -1,3 +1,7 @@
+# CSS Build Artifacts
+*.css
+*.css.map
+
 # Node modules
 node_modules/
 
