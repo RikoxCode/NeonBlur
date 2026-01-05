@@ -1,0 +1,16 @@
+// ═══════════════════════════════════════════════════════════════
+// BACKGROUND - Hintergrund-Styles
+// ═══════════════════════════════════════════════════════════════
+@use '../utils/variables' as *;
+
+.backgroundContainer,
+.backgroundContainer.withBackdrop,
+html {
+    background: linear-gradient(135deg, $background-dark 0%, $secondary-color 100%);
+    background-attachment: fixed;
+}
+
+.backdropContainer {
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(20px);
+}

@@ -1,0 +1,20 @@
+// ═══════════════════════════════════════════════════════════════
+// EPISODES - Episoden-Vorschau
+// ═══════════════════════════════════════════════════════════════
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.listItemImage.listItemImage-large.itemAction.lazy {
+    height: 110px;
+    border-radius: $radius-sm;
+}
+
+.listItem-content {
+    height: 115px;
+}
+
+.secondary.listItem-overview.listItemBodyText {
+    height: 65px;
+    margin: 0;
+    color: $text-secondary;
+}

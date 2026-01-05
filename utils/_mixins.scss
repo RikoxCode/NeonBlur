@@ -1,0 +1,104 @@
+// ═══════════════════════════════════════════════════════════════
+// MIXINS - Wiederverwendbare Styles
+// ═══════════════════════════════════════════════════════════════
+@use 'variables' as *;
+
+// Flexbox Center
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Hover-Effekt mit Transform
+@mixin hover-lift($distance: -8px) {
+    transition: transform $transition-normal, box-shadow $transition-normal;
+    
+    &:hover {
+        transform: translateY($distance);
+    }
+}
+
+// Card Style
+@mixin card($radius: $radius-md) {
+    background: $card-background;
+    border-radius: $radius;
+    transition: transform $transition-normal, box-shadow $transition-normal;
+}
+
+// Glassmorphism Effekt
+@mixin glass-effect($blur: 10px, $opacity: 0.85) {
+    background: rgba(13, 13, 13, $opacity);
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
+}
+
+// Text-Schatten für bessere Lesbarkeit
+@mixin text-shadow($color: rgba(0, 0, 0, 0.9)) {
+    text-shadow: 0 2px 8px $color;
+}
+
+// Responsive Breakpoints
+@mixin mobile {
+    @media (max-width: $breakpoint-mobile) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $breakpoint-desktop) {
+        @content;
+    }
+}
+
+// Smooth Scrollbar
+@mixin custom-scrollbar {
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $background-dark;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $border-color;
+        border-radius: 5px;
+        
+        &:hover {
+            background: $primary-color;
+        }
+    }
+}
+
+// Button Style
+@mixin button-primary {
+    background: $primary-color;
+    color: white;
+    border: none;
+    border-radius: $radius-sm;
+    padding: $spacing-md $spacing-lg;
+    font-weight: 600;
+    transition: all $transition-normal;
+    
+    &:hover {
+        background: $primary-hover;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 164, 220, 0.4);
+    }
+}
+
+// Focus State
+@mixin focus-ring {
+    &:focus-visible {
+        outline: 2px solid $primary-color;
+        outline-offset: 2px;
+    }
+}

@@ -1,0 +1,69 @@
+/*
+╔══════════════════════════════════════════════════════════════════╗
+║  AQUAFLOW - MODERNES JELLYFIN THEME                             ║
+║  SCSS Version - Professionelle Struktur                         ║
+╚══════════════════════════════════════════════════════════════════╝
+
+AUTOR: Custom Theme
+VERSION: 1.0.0
+LIZENZ: MIT
+
+VERWENDUNG:
+1. Installiere Sass: npm install -g sass
+2. Kompiliere: sass main.scss output.css
+3. Kopiere output.css in Jellyfin Dashboard > Allgemein > Custom CSS
+
+ENTWICKLUNG:
+- Watch Mode: sass --watch main.scss:output.css
+- Komprimiert: sass --style compressed main.scss:output.min.css
+*/
+
+// ═══════════════════════════════════════════════════════════════
+// UTILITIES - Variablen & Mixins zuerst laden
+// ═══════════════════════════════════════════════════════════════
+@use 'utils/variables' as *;
+@use 'utils/mixins' as *;
+
+// ═══════════════════════════════════════════════════════════════
+// BASE - Grundlegende Styles
+// ═══════════════════════════════════════════════════════════════
+@use 'base/reset';
+@use 'base/background';
+@use 'base/animations';
+
+// ═══════════════════════════════════════════════════════════════
+// COMPONENTS - Wiederverwendbare Komponenten
+// ═══════════════════════════════════════════════════════════════
+@use 'components/header';
+@use 'components/sidebar';
+@use 'components/cards';
+@use 'components/forms';
+@use 'components/episodes';
+@use 'components/cast';
+@use 'components/dialogs';
+
+// ═══════════════════════════════════════════════════════════════
+// LAYOUT - Seitenlayouts
+// ═══════════════════════════════════════════════════════════════
+@use 'layout/login';
+
+// ═══════════════════════════════════════════════════════════════
+// SCROLLBARS - Custom Scrollbar Styles
+// ═══════════════════════════════════════════════════════════════
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: $background-dark;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $border-color;
+    border-radius: 5px;
+    
+    &:hover {
+        background: $primary-color;
+    }
+}

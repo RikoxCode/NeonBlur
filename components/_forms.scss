@@ -1,0 +1,28 @@
+// ═══════════════════════════════════════════════════════════════
+// FORMS - Formulare & Inputs
+// ═══════════════════════════════════════════════════════════════
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.emby-input,
+.emby-textarea,
+.emby-select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid $border-color;
+    border-radius: $radius-sm;
+    color: $text-primary;
+    padding: $spacing-md;
+    transition: all $transition-normal;
+    
+    &:focus {
+        border-color: $primary-color !important;
+        box-shadow: 0 0 0 3px rgba(0, 164, 220, 0.2);
+        background: rgba(255, 255, 255, 0.08);
+    }
+}
+
+// Buttons
+.button-submit,
+.raised.emby-button {
+    @include button-primary;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "NeonBlur",
+  "version": "1.0.0",
+  "description": "Modern Jellyfin Theme with SCSS",
+  "main": "main.scss",
+  "scripts": {
+    "build": "sass main.scss:../output/neonblur-theme.css",
+    "build:min": "sass --style compressed main.scss:../output/neonblur-theme.min.css",
+    "watch": "sass --watch main.scss:../output/neonblur-theme.css",
+    "dev": "sass --watch --style expanded main.scss:../output/neonblur-theme.css"
+  },
+  "keywords": [
+    "jellyfin",
+    "theme",
+    "scss",
+    "css"
+  ],
+  "author": "RikoxCode",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}

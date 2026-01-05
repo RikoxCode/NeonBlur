@@ -1,0 +1,42 @@
+// ═══════════════════════════════════════════════════════════════
+// CAST - Besetzung & Crew
+// ═══════════════════════════════════════════════════════════════
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+#castContent {
+    .card.overflowPortraitCard {
+        width: 120px !important;
+        font-size: 90% !important;
+        
+        @include tablet {
+            width: 100px !important;
+        }
+    }
+    
+    .cardScalable {
+        width: 100px !important;
+        height: 100px !important;
+        border-radius: $radius-full;
+    }
+    
+    .cardContent-button {
+        border-radius: $radius-full !important;
+        background-size: cover !important;
+    }
+    
+    .cardOverlayContainer {
+        border-radius: $radius-full;
+    }
+    
+    .cardOverlayButton-br {
+        bottom: 5%;
+        right: 15%;
+        width: 70%;
+    }
+}
+
+// Sternebewertungen ausblenden
+div.starRatingContainer {
+    display: none;
+}

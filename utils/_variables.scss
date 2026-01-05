@@ -1,0 +1,55 @@
+// ═══════════════════════════════════════════════════════════════
+// VARIABLEN - Zentrale Theme-Konfiguration
+// ═══════════════════════════════════════════════════════════════
+
+// Hauptfarben
+$primary-color: #00a4dc;
+$primary-hover: #0099cc;
+$secondary-color: #1a1a1a;
+$background-dark: #0d0d0d;
+
+// Textfarben
+$text-primary: #ffffff;
+$text-secondary: #b3b3b3;
+$text-muted: #808080;
+
+// UI-Elemente
+$card-background: rgba(26, 26, 26, 0.8);
+$border-color: #333333;
+$success-color: #4caf50;
+$warning-color: #ff9800;
+
+// Abstände
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 12px;
+$spacing-lg: 24px;
+$spacing-xl: 40px;
+
+// Border Radius
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$radius-full: 50%;
+
+// Übergänge
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Schatten
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+$shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+$shadow-card-hover: 0 12px 24px rgba(0, 164, 220, 0.3);
+
+// Breakpoints
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1280px;
+$breakpoint-desktop: 1920px;
+
+// Z-Index
+$z-header: 100;
+$z-sidebar: 90;
+$z-modal: 200;
+$z-tooltip: 300;

@@ -1,0 +1,35 @@
+// ═══════════════════════════════════════════════════════════════
+// SIDEBAR - Seitenleiste
+// ═══════════════════════════════════════════════════════════════
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.mainDrawer {
+    background: $secondary-color !important;
+    border-right: 1px solid $border-color;
+}
+
+.mainDrawer-scrollContainer {
+    background: $secondary-color !important;
+}
+
+.drawerContent {
+    background: $secondary-color !important;
+}
+
+// Menüpunkte
+.navMenuOption {
+    background: transparent !important;
+    transition: background $transition-normal;
+    
+    &:hover {
+        background: rgba(0, 164, 220, 0.15) !important;
+        border-radius: $radius-sm;
+    }
+}
+
+.navMenuOption-selected {
+    background: $primary-color !important;
+    border-radius: $radius-sm;
+    margin: $spacing-xs $spacing-sm;
+}

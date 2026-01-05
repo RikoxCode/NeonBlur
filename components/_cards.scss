@@ -1,0 +1,67 @@
+// ═══════════════════════════════════════════════════════════════
+// CARDS - Medien-Karten
+// ═══════════════════════════════════════════════════════════════
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.cardContent-button,
+.itemDetailImage,
+.cardOverlayButton,
+.cardImageContainer {
+    border-radius: $radius-md !important;
+}
+
+.cardBox {
+    @include card($radius-md);
+    
+    @include mobile {
+        &:hover {
+            transform: none;
+        }
+    }
+}
+
+.card:hover .cardBox {
+    @include hover-lift(-8px);
+    box-shadow: $shadow-card-hover;
+}
+
+.cardOverlayContainer {
+    border-radius: $radius-md;
+}
+
+// Text ohne Hintergrund
+.cardText {
+    background: none !important;
+    background-color: transparent !important;
+}
+
+.cardTextCentered,
+.cardText-secondary {
+    background: none !important;
+    @include text-shadow;
+}
+
+.cardFooterText,
+.cardFooter {
+    background: none !important;
+    background-color: transparent !important;
+}
+
+.innerCardFooter,
+.cardImageTextContainer {
+    background: none !important;
+    background-color: transparent !important;
+}
+
+// Played Indicators
+.playedIndicator {
+    background: $success-color !important;
+    border-radius: $radius-full;
+}
+
+.countIndicator {
+    background: $primary-color;
+    border-radius: $radius-full;
+    font-weight: 600;
+}

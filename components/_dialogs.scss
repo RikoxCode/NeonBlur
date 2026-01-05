@@ -1,0 +1,24 @@
+// ═══════════════════════════════════════════════════════════════
+// DIALOGS - Dialoge & Popups
+// ═══════════════════════════════════════════════════════════════
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.dialog {
+    background: $secondary-color;
+    border-radius: $radius-lg;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.7);
+}
+
+.paperList {
+    background: $card-background;
+    border-radius: $radius-md;
+}
+
+.listItem {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    
+    &:hover {
+        background: rgba(0, 164, 220, 0.1);
+    }
+}

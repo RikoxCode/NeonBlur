@@ -1,0 +1,42 @@
+// ═══════════════════════════════════════════════════════════════
+// LOGIN - Login-Seite
+// ═══════════════════════════════════════════════════════════════
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+#loginPage {
+    background: linear-gradient(135deg, $background-dark 0%, $secondary-color 50%, #2d2d2d 100%);
+    background-size: cover;
+    
+    .readOnlyContent,
+    form {
+        max-width: 420px;
+        background: $card-background;
+        padding: $spacing-xl;
+        border-radius: $radius-lg;
+        box-shadow: $shadow-lg;
+        
+        @include mobile {
+            max-width: 90%;
+            padding: 30px 20px;
+        }
+    }
+    
+    h1 {
+        display: none;
+    }
+    
+    .padded-left.padded-right.padded-bottom-page {
+        margin-top: 100px;
+    }
+    
+    .btnManual,
+    .btnForgotPassword {
+        opacity: 0.7;
+        transition: opacity $transition-normal;
+        
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

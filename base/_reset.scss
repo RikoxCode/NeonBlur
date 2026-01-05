@@ -1,0 +1,50 @@
+// ═══════════════════════════════════════════════════════════════
+// BASE - Grundlegende Styles
+// ═══════════════════════════════════════════════════════════════
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+// Root Variablen für CSS Custom Properties
+:root {
+    --primary-color: #{$primary-color};
+    --primary-hover: #{$primary-hover};
+    --secondary-color: #{$secondary-color};
+    --background-dark: #{$background-dark};
+    --text-primary: #{$text-primary};
+    --text-secondary: #{$text-secondary};
+    --text-muted: #{$text-muted};
+    --card-background: #{$card-background};
+    --border-color: #{$border-color};
+    --success-color: #{$success-color};
+    --warning-color: #{$warning-color};
+}
+
+// Allgemeine Smooth Transitions
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Links
+a {
+    color: $primary-color;
+    transition: color $transition-normal;
+    
+    &:hover {
+        color: $primary-hover;
+    }
+}
+
+// Focus für Accessibility
+*:focus-visible {
+    @include focus-ring;
+}
+
+// Raised Elements
+.raised {
+    box-shadow: $shadow-sm;
+}
+
+// Custom Scrollbar
+body {
+    @include custom-scrollbar;
+}
