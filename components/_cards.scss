@@ -12,7 +12,9 @@
 }
 
 .cardBox {
-    @include card($radius-md);
+    background: transparent !important;
+    border-radius: $radius-md;
+    transition: transform $transition-normal, box-shadow $transition-normal;
     
     @include mobile {
         &:hover {
@@ -29,28 +31,29 @@
     border-radius: $radius-md;
 }
 
-// Text ohne Hintergrund
-.cardText {
-    background: none !important;
-    background-color: transparent !important;
-}
-
+// Alle Card-Hintergründe entfernen
+.card,
+.cardContent,
+.cardScalable,
+.cardOverlayInner,
+.cardPadder,
+.cardText,
 .cardTextCentered,
-.cardText-secondary {
-    background: none !important;
-    @include text-shadow;
-}
-
+.cardText-secondary,
 .cardFooterText,
-.cardFooter {
-    background: none !important;
-    background-color: transparent !important;
-}
-
+.cardFooter,
 .innerCardFooter,
 .cardImageTextContainer {
     background: none !important;
     background-color: transparent !important;
+}
+
+// Text mit Schatten für bessere Lesbarkeit
+.cardText,
+.cardTextCentered,
+.cardText-secondary,
+.cardFooterText {
+    @include text-shadow;
 }
 
 // Played Indicators
