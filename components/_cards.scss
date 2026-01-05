@@ -23,7 +23,6 @@
 
 .card:hover .cardBox {
     @include hover-lift(-8px);
-    box-shadow: $shadow-card-hover;
 }
 
 .cardOverlayContainer {
