@@ -111,8 +111,18 @@ html {
    ═══════════════════════════════════════════════════════════════ */
 
 .mainDrawer {
-    background: var(--secondary-color);
+    background: var(--secondary-color) !important;
     border-right: 1px solid var(--border-color);
+}
+
+/* Sidebar Scroll-Container */
+.mainDrawer-scrollContainer {
+    background: var(--secondary-color) !important;
+}
+
+/* Drawer-Content */
+.drawerContent {
+    background: var(--secondary-color) !important;
 }
 
 /* Ausgewählter Menüpunkt */
@@ -120,6 +130,16 @@ html {
     background: var(--primary-color) !important;
     border-radius: 8px;
     margin: 4px 8px;
+}
+
+/* Normale Menüpunkte */
+.navMenuOption {
+    background: transparent !important;
+}
+
+.navMenuOption:hover {
+    background: rgba(0, 164, 220, 0.15) !important;
+    border-radius: 8px;
 }
 
 
@@ -493,15 +513,3 @@ a:hover {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
-
-
-/*
-╔══════════════════════════════════════════════════════════════════╗
-║  ENDE DES THEMES                                                 ║
-║                                                                  ║
-║  Viel Spaß mit deinem neuen modernen Jellyfin-Theme!           ║
-║                                                                  ║
-║  TIPP: Du kannst die Farben oben im Abschnitt "FARBSCHEMA"     ║
-║  nach deinen Wünschen anpassen!                                 ║
-╚══════════════════════════════════════════════════════════════════╝
-*/
